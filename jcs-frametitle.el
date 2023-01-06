@@ -31,7 +31,6 @@
 
 ;;; Code:
 
-
 (defgroup jcs-frametitle nil
   "An frame title for jcs-emacs."
   :prefix "jcs-frametitle-"
@@ -137,7 +136,7 @@
 
 (defun jcs-frametitle--render-buffer-name ()
   "Render buffer name."
-  (concat  (if (buffer-modified-p) "*" "")
+  (concat  (if (and buffer-file-name (buffer-modified-p)) "*" "")
            (if buffer-file-name "%f" "%b")))
 
 (provide 'jcs-frametitle)
