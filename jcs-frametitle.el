@@ -133,7 +133,7 @@
 
 (defun jcs-frametitle--render-username-host ()
   "Render username and host."
-  (format "%s@%s: " user-real-login-name system-name))
+  (format "%s@%s: " user-real-login-name (system-name)))
 
 (defun jcs-frametitle--render-buffer-name ()
   "Render buffer name."

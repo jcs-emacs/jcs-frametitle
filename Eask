@@ -1,11 +1,11 @@
 (package "jcs-frametitle"
          "0.1.0"
-         "An frame title for jcs-emacs")
+         "A frame title for jcs-emacs")
 
 (website-url "https://github.com/jcs-emacs/jcs-frametitle")
 (keywords "faces" "frame-title")
 
-(package-file "jcs-echobar.el")
+(package-file "jcs-frametitle.el")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
 
