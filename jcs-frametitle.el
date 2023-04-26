@@ -136,8 +136,8 @@
 
 (defun jcs-frametitle--render-buffer-name ()
   "Render buffer name."
-  (concat  (if (and buffer-file-name (buffer-modified-p)) "*" "")
-           (if buffer-file-name "%f" "%b")))
+  (concat (if (and buffer-file-name (buffer-modified-p)) "*" "")
+          (if buffer-file-name "%f" "%b")))
 
 (provide 'jcs-frametitle)
 ;;; jcs-frametitle.el ends here
