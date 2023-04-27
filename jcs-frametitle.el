@@ -134,9 +134,15 @@
   "Render username and host."
   (format "%s@%s: " user-real-login-name (system-name)))
 
+(defcustom jcs-frametitle-buffer-name-prefix "📌 "
+  "Prefix to display before the buffer name."
+  :type 'string
+  :group 'jcs-frametitle)
+
 (defun jcs-frametitle--render-buffer-name ()
   "Render buffer name."
-  (concat (if (and buffer-file-name (buffer-modified-p)) "*" "")
+  (concat jcs-frametitle-buffer-name-prefix
+          (if (and buffer-file-name (buffer-modified-p)) "*" "")
           (if buffer-file-name "%f" "%b")))
 
 (provide 'jcs-frametitle)
