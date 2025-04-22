@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "jcs-frametitle"
          "0.1.0"
          "A frame title for jcs-emacs")
