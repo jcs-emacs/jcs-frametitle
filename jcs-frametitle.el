@@ -40,8 +40,8 @@
 (defcustom jcs-frametitle-render
   `((:eval (jcs-frametitle--render-invocation))
     (:eval (jcs-frametitle--render-username-host))
-    (:eval (jcs-frametitle--render-buffer-name))
-    (:eval (jcs-frametitle--render-default-text-scale)))
+    (:eval (jcs-frametitle--render-default-text-scale))
+    (:eval (jcs-frametitle--render-buffer-name)))
   "List of item to render in frame title."
   :type '(list symbol)
   :group 'jcs-frametitle)
