@@ -40,9 +40,10 @@
 (defcustom jcs-frametitle-render
   `((:eval (jcs-frametitle--render-invocation))
     (:eval (jcs-frametitle--render-username-host))
-    (:eval (jcs-frametitle--render-buffer-name)))
+    (:eval (jcs-frametitle--render-buffer-name))
+    (:eval (jcs-frametitle--render-default-text-scale)))
   "List of item to render in frame title."
-  :type 'list
+  :type '(list symbol)
   :group 'jcs-frametitle)
 
 (defvar jcs-frametitle--render nil)
@@ -50,6 +51,8 @@
 ;;
 ;; (@* "Externals" )
 ;;
+
+(defvar default-text-scale--complement)
 
 (declare-function string-pixel-width "subr-x.el")   ; TODO: remove this after 29.1
 (declare-function shr-string-pixel-width "shr.el")  ; TODO: remove this after 29.1
@@ -144,6 +147,18 @@
   (concat jcs-frametitle-buffer-name-prefix
           (if (and buffer-file-name (buffer-modified-p)) "*" "")
           (if buffer-file-name "%f" "%b")))
+
+(defun jcs-frametitle--render-default-text-scale ()
+  "Render default text scale amount."
+  (when (and (boundp 'default-text-scale--complement)
+             (/= default-text-scale--complement 0))
+    (format " (%s) "
+            (if-let* ((delta (- 0 default-text-scale--complement))
+                      (delta (format (if (>= delta 0) "+%d" "%d") delta)))
+                (propertize (jcs-modeline-2str delta)
+                            'mouse-face 'mode-line-highlight
+                            'help-echo (format "Default text scale %s" delta))
+              "0"))))
 
 (provide 'jcs-frametitle)
 ;;; jcs-frametitle.el ends here
