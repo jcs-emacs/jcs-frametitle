@@ -89,6 +89,10 @@
 ;; (@* "Util" )
 ;;
 
+(defun jcs-frametitle-2str (obj)
+  "Convert OBJ to string."
+  (format "%s" obj))
+
 ;; TODO: Use function `string-pixel-width' after 29.1
 (defun jcs-frametitle--string-pixel-width (str)
   "Return the width of STR in pixels."
@@ -155,7 +159,7 @@
     (format " (%s) "
             (if-let* ((delta (- 0 default-text-scale--complement))
                       (delta (format (if (>= delta 0) "+%d" "%d") delta)))
-                (propertize (jcs-modeline-2str delta)
+                (propertize (jcs-frametitle-2str delta)
                             'mouse-face 'mode-line-highlight
                             'help-echo (format "Default text scale %s" delta))
               "0"))))
