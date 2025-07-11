@@ -8,7 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## 0.1.1 (Unreleased)
 > Released N/A
 
-* feat: Add support for `default-text-scale` (abc4f76d77c36528b70779e357cb1f5c2ba15fa6)
+* feat: Add support for `default-text-scale` ([`abc4f76`](../../commit/abc4f76d77c36528b70779e357cb1f5c2ba15fa6))
 
 ## 0.1.0
 > Released May 18, 2025
