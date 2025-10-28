@@ -6,7 +6,7 @@
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; URL: https://github.com/jcs-emacs/jcs-frametitle
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "26.1") (elenv "0.1.0"))
+;; Package-Requires: ((emacs "28.1") (elenv "0.1.0"))
 ;; Keywords: faces frame-title
 
 ;; This file is not part of GNU Emacs.
