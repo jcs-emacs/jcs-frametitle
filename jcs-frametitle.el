@@ -6,7 +6,7 @@
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; URL: https://github.com/jcs-emacs/jcs-frametitle
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "26.1"))
+;; Package-Requires: ((emacs "26.1") (elenv "0.1.0"))
 ;; Keywords: faces frame-title
 
 ;; This file is not part of GNU Emacs.
@@ -30,6 +30,8 @@
 ;;
 
 ;;; Code:
+
+(require 'elenv)
 
 (defgroup jcs-frametitle nil
   "An frame title for jcs-emacs."
@@ -88,10 +90,6 @@
 ;;
 ;; (@* "Util" )
 ;;
-
-(defun jcs-frametitle-2str (obj)
-  "Convert OBJ to string."
-  (format "%s" obj))
 
 ;; TODO: Use function `string-pixel-width' after 29.1
 (defun jcs-frametitle--string-pixel-width (str)
@@ -159,7 +157,7 @@
     (format " (%s) "
             (if-let* ((delta (- 0 default-text-scale--complement))
                       (delta (format (if (>= delta 0) "+%d" "%d") delta)))
-                (propertize (jcs-frametitle-2str delta)
+                (propertize (elenv-2str delta)
                             'mouse-face 'mode-line-highlight
                             'help-echo (format "Default text scale %s" delta))
               "0"))))
